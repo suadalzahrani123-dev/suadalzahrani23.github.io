@@ -2,19 +2,110 @@
 <html lang="ar">
 <head>
 <meta charset="UTF-8">
-<title>منصة سياحية ذكية</title>
+<title>منصة سياحية</title>
+
+<style>
+body {
+margin:0;
+font-family:Arial;
+background:#1f3f3f;
+color:white;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+}
+
+/* شاشة الجوال */
+.phone {
+width:300px;
+height:600px;
+border-radius:30px;
+overflow:hidden;
+background:linear-gradient(#2c7a7b,#1a4d4f);
+box-shadow:0 20px 40px rgba(0,0,0,0.5);
+position:relative;
+}
+
+/* صورة البداية */
+.hero {
+height:100%;
+background-size:cover;
+background-position:center;
+display:flex;
+flex-direction:column;
+justify-content:flex-end;
+padding:20px;
+}
+
+/* النص */
+.title {
+font-size:28px;
+font-weight:bold;
+}
+
+.subtitle {
+font-size:14px;
+color:#ddd;
+margin-top:5px;
+}
+
+/* زر */
+.start-btn {
+margin-top:20px;
+background:black;
+color:white;
+padding:12px;
+border-radius:50px;
+text-align:center;
+cursor:pointer;
+}
+
+/* لوحة المدير */
+.admin {
+position:absolute;
+top:10px;
+left:10px;
+background:white;
+color:black;
+padding:5px;
+border-radius:8px;
+font-size:12px;
+}
+
+</style>
 </head>
 
-<body style="text-align:center; font-family:Arial; background:#111; color:white;">
+<body>
 
-<h1>🌍 منصة سياحية ذكية</h1>
+<div class="phone">
 
-<p>اكتشف تجارب، فعاليات، ومرشدين بسهولة</p>
+<div class="admin">
+تغيير الصورة:<br>
+<input type="text" id="imgInput" placeholder="حط رابط صورة">
+<button onclick="changeImage()">تغيير</button>
+</div>
 
-<input placeholder="ابحث عن تجربة أو فعالية..." style="padding:10px; width:250px;">
-<br><br>
+<div class="hero" id="hero"
+style="background-image:url('https://images.unsplash.com/photo-1580674285054-bed31e145f59');">
 
-<button style="padding:10px;">ابدأ</button>
+<div>
+<div class="title">ضيفنا</div>
+<div class="subtitle">لتجربة سياحية متكاملة</div>
+
+<div class="start-btn">ابدأ</div>
+</div>
+
+</div>
+
+</div>
+
+<script>
+function changeImage(){
+let url = document.getElementById("imgInput").value;
+document.getElementById("hero").style.backgroundImage = "url('" + url + "')";
+}
+</script>
 
 </body>
 </html>
